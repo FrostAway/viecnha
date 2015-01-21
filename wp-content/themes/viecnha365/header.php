@@ -35,7 +35,7 @@
         <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/assets/css/font-awesome.min.css">
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
+        
 	<?php if ( is_singular() ) wp_enqueue_script('comment-reply'); ?>
 
 	<?php wp_head(); ?>
@@ -54,7 +54,7 @@
     
     <div id="header" class="full-width">
     <div class="logo">
-        <a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/img/logo.png"></a>
+        <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory') ?>/assets/img/logo.png"></a>
     </div>
     <div class="slogan">
         <img src="<?php bloginfo('template_directory') ?>/assets/img/slogan.png">
@@ -75,29 +75,13 @@
 <!--/ #header -->
 <div id="menu" class="full-width">
     <div class="container">
-<!--        <ul>
-            <li><a class="active" href="#">Trang chủ</a></li>
-            <li><a href="#">Giới thiệu</a></li>
-            <li class="dropdown">
-                <a href="#">Dịch vụ</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Dọn nhà đón tết</a></li>
-                    <li><a href="#">Giúp việc theo giờ</a></li>
-                    <li><a href="#">Vệ sinh công nghiệp</a></li>
-                    <li><a href="#">Tạp vụ văn phòng</a></li>
-                    <li><a href="#">Chuyển nhà trọn gói</a></li>
-                    <li><a href="#">Sửa máy tính</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Quy trình</a></li>
-            <li><a href="#">Bảng giá</a></li>
-            <li><a href="#">Liên hệ</a></li>
-        </ul>-->
+
         <?php wp_nav_menu(array('container'=>'')); ?>
         <script>
             jQuery(document).ready(function(){
-               jQuery('.container .menu-item-has-children').addClass('dropdown');
-               jQuery('.container .sub-menu').addClass('dropdown-menu');
+                jQuery('#menu-main-menu').fadeIn(300);
+               jQuery('.menu .menu-item-has-children').addClass('dropdown');
+               jQuery('.menu .sub-menu').addClass('dropdown-menu');
             });
         </script>
         <form method="get" action="#">

@@ -852,6 +852,9 @@ input[type="text"], textarea {
     color: #888
 }
 
+#menu-main-menu{
+    display: none;
+}
 
 #google-maps{
     width: 407px; height: 186px;
@@ -860,3 +863,8 @@ fb-like-box{
     background: #fff;
 }
 
+.skype{
+    img{
+        margin: 0px !important;
+    }
+}

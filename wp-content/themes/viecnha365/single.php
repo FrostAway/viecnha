@@ -1,31 +1,34 @@
 <?php get_header(); ?>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<div id="content" class="full-width">
+    <div class="container">
+        <div class="left">
+            <?php if (have_posts()): while (have_posts()): the_post(); ?>
+                    <div class="post-item">
+                        <div class="post-img">
+                            <a href="<?php the_permalink() ?>"><?php the_post_thumbnail(); ?></a>
+                        </div>
+                        <div class="post-info">
+                            <h3 class="post-title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h3>
+                            <p class="post-date"><?php the_time('l') ?>, ngày <?php the_time('d - m - y'); ?></p>
+                            <p class="post-sum">
+                                <?php echo get_the_content(); ?>
+                            </p>
+                        </div>
+                    </div>
+                <?php endwhile;
+            else: ?>
+                <h3>Không có bài viết nào</h3>
+<?php endif; ?>
 
-		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			
-			<h2><?php the_title(); ?></h2>
-			
-			<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
-
-			<div class="entry">
-				
-				<?php the_content(); ?>
-
-				<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
-				
-				<?php the_tags( 'Tags: ', ', ', ''); ?>
-
-			</div>
-			
-			<?php edit_post_link('Edit this entry','','.'); ?>
-			
-		</div>
-
-	<?php comments_template(); ?>
-
-	<?php endwhile; endif; ?>
-	
-<?php get_sidebar(); ?>
+        </div>
+        <!--/ .left -->
+            <?php get_sidebar(); ?>
+        <!--/ .right -->
+    </div>
+</div>
 
 <?php get_footer(); ?>
+

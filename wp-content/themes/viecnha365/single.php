@@ -21,7 +21,7 @@
                 <?php endwhile;
             else: ?>
                 <h3>Không có bài viết nào</h3>
-<?php endif; ?>
+            <?php endif; ?>
 
         </div>
         <!--/ .left -->
